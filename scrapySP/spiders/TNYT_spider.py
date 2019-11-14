@@ -16,6 +16,7 @@ class QuotesSpider(scrapy.Spider):
 
 
 	def start_requests(self):
+		search_temp =  input('')
 		while search_temp != '':
 			search_list.append(search_temp)
 			search_temp =  input('')
