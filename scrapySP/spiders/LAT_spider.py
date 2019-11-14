@@ -60,12 +60,13 @@ class QuotesSpider(scrapy.Spider):
     #	f.write('\n')
     #	f.write(filetext)
     def url_genor(self):
-	search_temp =  input('')
-	while search_temp != '':
-		search_list.append(search_temp)
-		search_temp =  input('')
-	s = '%20'
-	search_result = s.join(search_list)
+        search_list = []
+        search_temp = input('Please input what you want to search')
+        while search_temp != '':
+            search_list.append(search_temp)
+            search_temp = input('')
+        s = '%20'
+        search_result = s.join(search_list)
         url = 'https://www.latimes.com/search?q={}&p={}'.format(search_result,self.index)
         self.index += 1
         return url

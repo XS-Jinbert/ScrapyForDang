@@ -16,14 +16,16 @@ class QuotesSpider(scrapy.Spider):
 
 
 	def start_requests(self):
-		search_temp =  input('')
+		date_search = '12%20Months'
+		search_list = []
+		search_temp = input('Please input what you want to search')
 		while search_temp != '':
 			search_list.append(search_temp)
-			search_temp =  input('')
+			search_temp = input('')
 		s = '%20'
 		search_result = s.join(search_list)
 		url = 'https://www.nytimes.com/search?dropmab=false&endDate={}&query={}&sort=best&startDate={}'\
-			.format(stoptime, search_result, ,starttime)
+			.format(stoptime, search_result, starttime)
 
 		yield scrapy.Request(url=url, callback=self.parse)
 
