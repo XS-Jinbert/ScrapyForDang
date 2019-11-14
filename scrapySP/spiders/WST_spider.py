@@ -81,12 +81,12 @@ class QuotesSpider(scrapy.Spider):
 
     def url_genor(self):
         date_search = '12%20Months'
+	search_temp =  input('')
+	while search_temp != '':
+		search_list.append(search_temp)
 		search_temp =  input('')
-		while search_temp != '':
-			search_list.append(search_temp)
-			search_temp =  input('')
-		s = '%20'
-		search_result = s.join(search_list)
+	s = '%20'
+	search_result = s.join(search_list)
         url = 'https://www.washingtonpost.com/newssearch/?datefilter={}&query={}&sort=Relevance&startat={}#top'\
                  .format(date_search, search_result ,self.index)
         self.index += 20
