@@ -18,7 +18,7 @@ class QuotesSpider(scrapy.Spider):
 	def start_requests(self):
 		date_search = '12%20Months'
 		search_list = []
-		search_temp = input('Please input what you want to search')
+		search_temp = input('Please input what you want to search(one by one word)\n')
 		while search_temp != '':
 			search_list.append(search_temp)
 			search_temp = input('')
