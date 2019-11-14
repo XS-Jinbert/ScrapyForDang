@@ -68,11 +68,12 @@ class QuotesSpider(scrapy.Spider):
                 yield item
                 break
     def url_genor(self):
-		while search_temp != '':
-			search_list.append(search_temp)
-			search_temp =  input('')
-		s = '+'
-		search_result = s.join(search_list)
+	search_temp =  input('')
+	while search_temp != '':
+		search_list.append(search_temp)
+		search_temp =  input('')
+	s = '+'
+	search_result = s.join(search_list)
         url = 'https://www.chicagotribune.com/search/{}/1-y/ALL/score/{}/'.format(search_result, self.index)
         self.index += 1
         return url
