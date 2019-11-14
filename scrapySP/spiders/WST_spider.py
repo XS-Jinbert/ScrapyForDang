@@ -81,6 +81,7 @@ class QuotesSpider(scrapy.Spider):
 
     def url_genor(self):
         date_search = '12%20Months'
+		search_temp =  input('')
 		while search_temp != '':
 			search_list.append(search_temp)
 			search_temp =  input('')
