@@ -60,6 +60,7 @@ class QuotesSpider(scrapy.Spider):
     #	f.write('\n')
     #	f.write(filetext)
     def url_genor(self):
+		search_temp =  input('')
 		while search_temp != '':
 			search_list.append(search_temp)
 			search_temp =  input('')
